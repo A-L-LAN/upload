@@ -2,12 +2,14 @@
 
 from flask import Flask, request, send_file
 import gridfs
-from pymongo import MongoClient
+from pymongo.server_api import ServerApi
+from pymongo.mongo_client import MongoClient
 
 app = Flask(_name_)
 
 # Connect to MongoDB Atlas cluster 
-client = MongoClient("mongodb+srv://<allankipruto4th>:<allan28>@cluster0.rqefq2o.mongodb.net/?retryWrites=true&w=majority")
+uri = "mongodb+srv://<allankipruto4th>:<allan28>@cluster0.rqefq2o.mongodb.net/?retryWrites=true&w=majority"
+client = MongoClient(uri, server_api=ServerApi('1'))
 db = client.images
 fs = gridfs.GridFS(db)
 
