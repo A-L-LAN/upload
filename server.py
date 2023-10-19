@@ -7,7 +7,7 @@ from pymongo import MongoClient
 app = Flask(_name_)
 
 # Connect to MongoDB Atlas cluster 
-client = MongoClient("mongodb+srv://<allankipruto4th>:<Euph0r1a>@mycluster.mongodb.net/images?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://<allankipruto4th>:<Euph0r1a>@cluster0.rqefq2o.mongodb.net/?retryWrites=true&w=majority")
 db = client.images
 fs = gridfs.GridFS(db)
 
